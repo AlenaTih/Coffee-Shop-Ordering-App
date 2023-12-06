@@ -39,13 +39,8 @@ header {
 
 .menu-container {
     width: 500px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 40px;
-}
-
-ul {
-    list-style: none;
+    margin: 60px auto 40px auto;
+    padding-left: 45px;
 }
 
 .menu-item {
@@ -101,6 +96,7 @@ header {
 
 .menu-container {
     width: 60%;
+    margin-top: 70px;
     margin-bottom: 80px;
 }
 

@@ -1,10 +1,10 @@
 const menuArray = [
     {
         name: "Pizza",
-        ingredients: ["pepperoni", "mushrom", "mozarella"],
-        id: 0,
+        ingredients: ["pepperoni", "mushrooms", "mozarella"],
         price: 14,
-        emoji: "🍕"
+        emoji: "🍕",
+        id: 0
     },
     {
         name: "Hamburger",
@@ -21,3 +21,5 @@ const menuArray = [
         id: 2
     }
 ]
+
+export default menuArray
