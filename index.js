@@ -71,7 +71,12 @@ function renderOrder() {
         return total + currentPrice
     })
 
-    document.getElementById("order-sum").innerHTML = `<h4>$${sumToPay}</h4>`
+    if (orderArray.length > 1) {
+        document.getElementById("order-sum").innerHTML = `<h4>$${Math.floor(sumToPay * 0.85)}</h4>`
+    } else {
+        document.getElementById("order-sum").innerHTML = `<h4>$${sumToPay}</h4>`
+    }
+
 }
 
 function handlePurchaseButtonClick() {
@@ -85,6 +90,8 @@ function handlePayButtonClick() {
         <div class="order-complete-message-section"
             id="order-complete-message-section">
             <h8>Thanks, James! Your order is on its way!</h8>
+            <h8>Rate your experience</8>
+            <button class="rate-button" id="rate-button">⭐️⭐️⭐️⭐️⭐️</button>
         </div>`
 
 }
