@@ -27,10 +27,47 @@
         </header>
         
         <main>
-            <div class="menu-container" id="menu-container"></div>
-            <div class="checkout-section"></div>
-            <div class="payment-modal"></div>
-            <div class="order-complete-message-section"></div>
+            <div class="menu-container" id="menu-container">
+                <!-- menu items are here -->
+                
+            </div>
+
+                <div class="checkout-section" id="checkout-section">
+                    <h3>Your order</h3>
+                    <div class="order-items" id="order-items">
+                        <!-- order items are here -->
+                    </div>
+                    <div class="order-total">
+                        <h2>Total price:</h2>
+                        <div class="order-sum" id="order-sum">
+                            <!-- sum to pay is here -->
+                        </div>
+                    </div>
+                    <button class="purchase-button" id="purchase-button">
+                        Complete order
+                    </button>
+                </div>
+
+            <div class="payment-modal" id="payment-modal">
+                <h6>Enter card details</h6>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    required>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter card number"
+                    required>
+                <input 
+                    type="text"
+                    name="name"
+                    placeholder="Enter CVV"
+                    required>
+                <button class="pay-button" id="pay-button">Pay</button>
+            </div>
+
         </main>
         
 	    <script src="index.js" type="module"></script>
