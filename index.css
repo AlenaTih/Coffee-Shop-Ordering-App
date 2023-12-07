@@ -157,6 +157,12 @@ header {
     border-radius: 3px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
 .order-complete-message-section {
     display: flex;
     background-color: #ECFDF5;
