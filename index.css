@@ -182,11 +182,16 @@ form {
     background-color: #ECFDF5;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     height: 120px;
     width: 504px;
     margin: 0 auto 0 auto;
     padding: 50px 60px;
+}
+
+.rating-container {
+    margin-top: 15px;
+    text-align: center;
 }
 
 /* buttons and icons*/
@@ -233,12 +238,14 @@ i {
     cursor: pointer;
 }
 
-.rate-button {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
+.star {
     cursor: pointer;
+}
+
+.star:hover,
+.star:focus,
+.star:active {
+    font-size: 40px;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

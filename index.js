@@ -10,6 +10,7 @@ document.addEventListener("click", function(e) {
     } else if (e.target.id === "purchase-button") {
         handlePurchaseButtonClick()
     } else if (e.target.id === "pay-button") {
+        e.preventDefault()
         handlePayButtonClick()
     }
 })
@@ -84,17 +85,57 @@ function handlePurchaseButtonClick() {
 }
 
 function handlePayButtonClick() {
-    document.getElementById("payment-modal").style.display = "none"
 
-    document.getElementById("checkout-section").innerHTML = `
-        <div class="order-complete-message-section"
-            id="order-complete-message-section">
-            <h8>Thanks, James! Your order is on its way!</h8>
-            <h8>Rate your experience</8>
-            <button class="rate-button" id="rate-button">⭐️⭐️⭐️⭐️⭐️</button>
-        </div>`
+        const form = document.querySelector("form")
+
+        if(!form.checkValidity()) {
+        // If the form is not valid, prevent submission
+        alert("Please fill in all required fields")
+        } else {
+            document.getElementById("payment-modal").style.display = "none"
+
+            document.getElementById("checkout-section").innerHTML = `
+            <div class="order-complete-message-section"
+                id="order-complete-message-section">
+                <h8>Thank you! Your order is on its way!</h8>
+                <h8>Rate your experience</8>
+                <div class="rating-container" id="rating-container"></div>
+            </div>`
+        }
+
+        // Create a container for the rating stars
+        const ratingContainer = document.getElementById("rating-container")
+
+        // Generate 5 starts dynamically
+        for (let i = 1; i <= 5; i++) {
+            const star = document.createElement("span")
+            star.className = "star"
+            star.textContent = "⭐️"
+            star.dataset.rating = i
+            star.addEventListener("click", handleStarClick)
+            ratingContainer.append(star)
+        }
 
 }
+
+// Define a function to handle star clicks
+function handleStarClick(e) {
+    const rating = e.target.dataset.rating
+    
+    console.log(rating)
+
+    let ratingHtml = ""
+
+    for (let i = 1; i <= rating; i++) {
+        ratingHtml += "⭐️"
+    }
+
+    document.getElementById("rating-container").innerHTML = ratingHtml
+    
+    // alert(`You rated your experience as ${rating} stars!`)
+    
+}
+
 
 function getMenuHtml() {
      
@@ -128,3 +169,7 @@ function renderMenu() {
 }
 
 renderMenu()
+
+
+
+/* <button class="rate-button" id="rate-button">⭐️⭐️⭐️⭐️⭐️</button> */
