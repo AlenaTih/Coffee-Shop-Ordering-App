@@ -73,11 +73,11 @@ function renderOrder() {
     })
 
     if (orderArray.length > 1) {
-        document.getElementById("order-sum").innerHTML = `<h4>$${Math.floor(sumToPay * 0.85)}</h4>`
+        document.getElementById("order-sum").innerHTML = `<h4>$${(sumToPay * 0.85).toFixed(2)}</h4>`
         document.getElementById("order-discount-container").innerHTML = `
             <h4>Your discount:</h4>
             <div class="order-discount" id="order-discount">
-                <h4>$${Math.floor(sumToPay * 0.15)}</h4>
+                <h4>$${(sumToPay * 0.15).toFixed(2)}</h4>
             </div>`
     } else {
         document.getElementById("order-sum").innerHTML = `<h4>$${sumToPay}</h4>`
@@ -103,7 +103,7 @@ function handlePayButtonClick() {
             <div class="order-complete-message-section"
                 id="order-complete-message-section">
                 <h8>Thank you! Your order is on its way!</h8>
-                <h8>Rate your experience</8>
+                <h8>Please rate your experience</8>
                 <div class="rating-container" id="rating-container"></div>
             </div>`
         }
@@ -114,8 +114,7 @@ function handlePayButtonClick() {
         // Generate 5 starts dynamically
         for (let i = 1; i <= 5; i++) {
             const star = document.createElement("span")
-            star.className = "star"
-            star.textContent = "⭐️"
+            star.className = "star fa-solid fa-star"
             star.dataset.rating = i
             star.addEventListener("click", handleStarClick)
             ratingContainer.append(star)
@@ -129,13 +128,24 @@ function handleStarClick(e) {
     
     console.log(rating)
 
-    let ratingHtml = ""
+    // Clear the rating container
+    document.getElementById("rating-container").innerHTML = ""
 
+    // Add gold stars, the quantity of them = the rating a user gives
     for (let i = 1; i <= rating; i++) {
-        ratingHtml += "⭐️"
+        const goldStar = document.createElement("span")
+        goldStar.className = "goldStar fa-solid fa-star"
+        document.getElementById("rating-container").append(goldStar)
     }
 
-    document.getElementById("rating-container").innerHTML = ratingHtml
+    // Add gray stars, to show that a user rated it for less than 5 stars
+    let notRating = 5 - rating
+
+    for (let i = 1; i <= notRating; i++) {
+        const star = document.createElement("span")
+        star.className = "star fa-solid fa-star"
+        document.getElementById("rating-container").append(star)
+    }
     
     // alert(`You rated your experience as ${rating} stars!`)
     
@@ -159,9 +169,7 @@ function getMenuHtml() {
                 <h4>$${item.price}</h4>
             </div>
             <div class="add-btn-container">
-                <button class="add-button" data-add="${item.id}">
-                    <i class="fa-light fa-plus" data-add="${item.id}"></i>
-                </button>
+                <i class="fa-light fa-plus add-button" data-add="${item.id}"></i>
             </div>
         </div>`
     })
@@ -174,7 +182,3 @@ function renderMenu() {
 }
 
 renderMenu()
-
-
-
-/* <button class="rate-button" id="rate-button">⭐️⭐️⭐️⭐️⭐️</button> */
