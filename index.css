@@ -42,6 +42,10 @@ h4 {
     font-size: 20px;
 }
 
+.order-discount-container h4 {
+    margin: 0;
+}
+
 h6 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 24px;
@@ -149,6 +153,15 @@ header {
 }
 
 .order-sum {
+    margin-left: auto;
+}
+
+.order-discount-container {
+    display: flex;
+    margin: 0;
+}
+
+.order-discount {
     margin-left: auto;
 }
 

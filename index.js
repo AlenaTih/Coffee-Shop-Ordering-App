@@ -74,6 +74,11 @@ function renderOrder() {
 
     if (orderArray.length > 1) {
         document.getElementById("order-sum").innerHTML = `<h4>$${Math.floor(sumToPay * 0.85)}</h4>`
+        document.getElementById("order-discount-container").innerHTML = `
+            <h4>Your discount:</h4>
+            <div class="order-discount" id="order-discount">
+                <h4>$${Math.floor(sumToPay * 0.15)}</h4>
+            </div>`
     } else {
         document.getElementById("order-sum").innerHTML = `<h4>$${sumToPay}</h4>`
     }
