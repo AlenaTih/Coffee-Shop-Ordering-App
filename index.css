@@ -97,7 +97,6 @@ header {
 
 .menu-item {
     display: flex;
-    /* gap: 40px; */
     border-bottom: 1px solid #D2D2D2;
 }
 
@@ -343,9 +342,14 @@ p {
 }
 
 .menu-container {
-    width: 60%;
+    flex-wrap: wrap;
+    height: 1000px;
+    width: 80%;
     margin-top: 70px;
-    /* margin-bottom: 80px; */
+}
+
+.menu-item {
+    margin-left: 60px;
 }
 
 .checkout-section {

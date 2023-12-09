@@ -85,6 +85,8 @@ function renderOrder() {
 
 }
 
+// Add here a condition for else if above
+
 function handlePurchaseButtonClick() {
     document.getElementById("payment-modal").style.display = "flex"
 }
