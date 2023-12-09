@@ -183,7 +183,7 @@ header {
     height: 480px;
     /* max-width: 520px; */
     max-width: 80%;
-    padding: 55px 35px;
+    padding: 25px 45px;
     border-radius: 4px;
     box-sizing: border-box;
     box-shadow: 6px 6px 255px rgba(0, 0, 0, 0.50);
@@ -218,8 +218,8 @@ input {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    /* height: 120px;
-    width: 504px; */
+    height: 180px;
+    /* width: 504px; */
     margin: 0 auto 0 auto;
     padding: 50px 60px;
 }
@@ -231,14 +231,6 @@ input {
 }
 
 /* buttons and icons*/
-
-/* .add-button {
-    font-size: 40px;
-    border-radius: 50%;
-    border: 1px solid #DEDEDE;
-    padding: 15px 20px;
-    cursor: pointer;
-} */
 
 i {
     font-size: 40px;
@@ -259,6 +251,11 @@ i {
     margin: 0 0 0 15px;
     padding: 0;
     border: none;
+    cursor: pointer;
+}
+
+.payment-modal-close-btn {
+    margin: 0 0 30px auto;
     cursor: pointer;
 }
 
@@ -367,7 +364,7 @@ p {
 
 .payment-modal {
     max-width: 520px;
-    padding: 80px 40px;
+    padding: 45px 55px;
 }
 
 .order-complete-message-section {

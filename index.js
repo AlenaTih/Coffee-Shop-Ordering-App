@@ -12,8 +12,14 @@ document.addEventListener("click", function(e) {
     } else if (e.target.id === "pay-button") {
         e.preventDefault()
         handlePayButtonClick()
+    } else if (e.target.id === "payment-modal-close-btn") {
+        closePaymentModal()
     }
 })
+
+// window.addEventListener("click", rootClick)
+
+// document.getElementById("payment-modal").addEventListener("click", modalClick)
 
 function handleAddButtonClick(itemId) {
 
@@ -91,6 +97,29 @@ function handlePurchaseButtonClick() {
     document.getElementById("payment-modal").style.display = "flex"
 }
 
+// function rootClick(e) {
+//     if (document.getElementById("payment-modal").style.display === "flex" &&
+//         e.target.id !== "payment-modal" &&
+//         e.target.id !== "pay-button" &&
+//         e.target.id !== "purchase-button" &&
+//         !document.getElementById("payment-modal").contains(e.target)) {
+//         // Element clicked was not the modal or its children — close the modal
+//         console.log("clicked")
+//         document.getElementById("payment-modal").style.display = "none"
+//         }
+// }
+
+// function modalClick(e) {
+//     e.preventDefault()
+//     e.stopPropagation()
+//     e.stopImmediatePropagation()
+//     return false
+// }
+
+function closePaymentModal() {
+    document.getElementById("payment-modal").style.display = "none"
+}
+
 function handlePayButtonClick() {
 
         const form = document.querySelector("form")
@@ -152,7 +181,6 @@ function handleStarClick(e) {
     // alert(`You rated your experience as ${rating} stars!`)
     
 }
-
 
 function getMenuHtml() {
      
