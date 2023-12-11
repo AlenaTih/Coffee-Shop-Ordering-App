@@ -1,5 +1,7 @@
 import menuArray from '/data.js'
 
+const paymentModal = document.getElementById("payment-modal")
+
 let orderArray = []
 
 document.addEventListener("click", function(e) {
@@ -17,9 +19,9 @@ document.addEventListener("click", function(e) {
     }
 })
 
-// window.addEventListener("click", rootClick)
+window.addEventListener("click", rootClick)
 
-// document.getElementById("payment-modal").addEventListener("click", modalClick)
+// paymentModal.addEventListener("click", modalClick)
 
 function handleAddButtonClick(itemId) {
 
@@ -36,17 +38,20 @@ function handleAddButtonClick(itemId) {
 }
 
 function handleRemoveButtonClick(itemId) {
-    console.log("clicked" + itemId)
-
+    
     const targetItemObj = menuArray.filter( function(menuItem) {
         return menuItem.id === itemId
     })[0]
 
     orderArray.pop(targetItemObj)
 
-    if (orderArray.length > 0) {
+    if (orderArray.length > 1) {
         renderOrder()
-    } else {
+    } else if (orderArray.length === 1) {
+        renderOrder()
+        document.getElementById("order-discount-container").style.display = "none" 
+    }
+    else {
         document.getElementById("checkout-section").style.display = "none"
     }
 
@@ -80,6 +85,7 @@ function renderOrder() {
 
     if (orderArray.length > 1) {
         document.getElementById("order-sum").innerHTML = `<h4>$${(sumToPay * 0.85).toFixed(2)}</h4>`
+        document.getElementById("order-discount-container").style.display = "flex"
         document.getElementById("order-discount-container").innerHTML = `
             <h4>Your discount:</h4>
             <div class="order-discount" id="order-discount">
@@ -94,20 +100,24 @@ function renderOrder() {
 // Add here a condition for else if above
 
 function handlePurchaseButtonClick() {
-    document.getElementById("payment-modal").style.display = "flex"
+    paymentModal.style.display = "flex"
 }
 
-// function rootClick(e) {
-//     if (document.getElementById("payment-modal").style.display === "flex" &&
-//         e.target.id !== "payment-modal" &&
-//         e.target.id !== "pay-button" &&
-//         e.target.id !== "purchase-button" &&
-//         !document.getElementById("payment-modal").contains(e.target)) {
-//         // Element clicked was not the modal or its children — close the modal
-//         console.log("clicked")
-//         document.getElementById("payment-modal").style.display = "none"
-//         }
-// }
+function closePaymentModal() {
+    paymentModal.style.display = "none"
+}
+
+function rootClick(e) {
+    if (paymentModal.style.display === "flex" &&
+        e.target.id !== "payment-modal" &&
+        e.target.id !== "pay-button" &&
+        e.target.id !== "purchase-button" &&
+        !paymentModal.contains(e.target)) {
+        // Element clicked was not the modal or its children — close the modal
+        console.log("clicked")
+        closePaymentModal()
+        }
+}
 
 // function modalClick(e) {
 //     e.preventDefault()
@@ -115,10 +125,6 @@ function handlePurchaseButtonClick() {
 //     e.stopImmediatePropagation()
 //     return false
 // }
-
-function closePaymentModal() {
-    document.getElementById("payment-modal").style.display = "none"
-}
 
 function handlePayButtonClick() {
 
@@ -128,7 +134,7 @@ function handlePayButtonClick() {
         // If the form is not valid, prevent submission
         alert("Please fill in all required fields")
         } else {
-            document.getElementById("payment-modal").style.display = "none"
+            paymentModal.style.display = "none"
 
             document.getElementById("checkout-section").innerHTML = `
             <div class="order-complete-message-section"
