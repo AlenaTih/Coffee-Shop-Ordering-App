@@ -132,7 +132,7 @@ function handlePayButtonClick() {
 
         if(!form.checkValidity()) {
         // If the form is not valid, prevent submission
-        alert("Please fill in all required fields")
+        alert("Please fill in all fields")
         } else {
             paymentModal.style.display = "none"
 
