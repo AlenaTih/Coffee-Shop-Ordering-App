@@ -196,10 +196,10 @@ function getMenuHtml() {
 
         menuHtml +=`
         <div class="menu-item"">
-            <div class="item-image">
-                <h2>${item.emoji}</h2>
+            <div class="item-image-container">
+            <img class="item-image" src="images/${item.image}">
             </div>
-            <div>
+            <div class="menu-details">
                 <h3>${item.name}</h3>
                 <p>${item.ingredients.join(", ")}</p>
                 <h4>$${item.price}</h4>
