@@ -1,46 +1,46 @@
 const menuArray = [
     {
-        name: "Pizza",
-        ingredients: ["pepperoni", "mushrooms", "mozarella"],
+        name: "Cappuccino",
+        ingredients: ["A classic Italian favourite made with rich espresso, steamed milk, and a layer of foamy froth"],
         price: 14,
         image: "coffee.png",
         id: "0"
     },
     {
-        name: "Hamburger",
-        ingredients: ["beef", "cheese", "lettuce"],
-        price: 12,
+        name: "Latte",
+        ingredients: ["A velvety-smooth blend of espresso and steamed milk, topped with a generous swirl of froth"],
+        price: 15,
         image: "coffee.png",
         id: "1"
     },
         {
-        name: "Beer",
-        ingredients: ["grain, hops, yeast, water"],
+        name: "Americano",
+        ingredients: ["A milder take on the traditional espresso, made by adding hot water to a shot of espresso, creating a smooth and balanced cup that’s perfect for any time of day"],
         price: 12,
         image: "coffee.png",
         id: "2"
     },
     {
-        name: "Pizza",
-        ingredients: ["pepperoni", "mushrooms", "mozarella"],
-        price: 14,
+        name: "Espresso",
+        ingredients: ["For those who like their coffee strong and intense, this drink is a concentrated shot of pure flavor, served straight up"],
+        price: 9,
         image: "coffee.png",
-        id: "0"
-    },
-    {
-        name: "Hamburger",
-        ingredients: ["beef", "cheese", "lettuce"],
-        price: 12,
-        image: "coffee.png",
-        id: "1"
-    },
-        {
-        name: "Beer",
-        ingredients: ["grain, hops, yeast, water"],
-        price: 12,
-        image: "coffee.png",
-        id: "2"
+        id: "3"
     }
+    // {
+    //     name: "Hamburger",
+    //     ingredients: ["beef", "cheese", "lettuce"],
+    //     price: 12,
+    //     image: "coffee.png",
+    //     id: "1"
+    // },
+    //     {
+    //     name: "Beer",
+    //     ingredients: ["grain, hops, yeast, water"],
+    //     price: 12,
+    //     image: "coffee.png",
+    //     id: "2"
+    // }
 ]
 
 export default menuArray

@@ -67,8 +67,8 @@ function renderOrder() {
 
         orderHtml +=`
         <div class="order-item">
-            <h3>${orderItem.name}</h3>
-            <button class="remove-button" data-remove="${orderItem.id}">remove</button>
+                <h3>${orderItem.name}</h3>
+                <button class="remove-button" data-remove="${orderItem.id}">remove</button>
             <div class="order-item-price">
                 <h4>$${orderItem.price}</h4>
             </div>
@@ -96,6 +96,9 @@ function renderOrder() {
     }
 
 }
+
+
+
 
 // Add here a condition for else if above
 
@@ -194,7 +197,7 @@ function getMenuHtml() {
 
     menuArray.forEach( function(item) {
 
-        menuHtml +=`
+       menuHtml +=`
         <div class="menu-item"">
             <div class="item-image-container">
             <img class="item-image" src="images/${item.image}">
@@ -208,7 +211,7 @@ function getMenuHtml() {
                 <i class="fa-light fa-plus add-button" data-add="${item.id}"></i>
             </div>
         </div>`
-    })
+    }) 
 
     return menuHtml
 }
