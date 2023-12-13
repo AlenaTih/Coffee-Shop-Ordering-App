@@ -14,7 +14,11 @@ h1 {
     padding: 0;
 }
 
-header h2 {
+.footer-container h1 {
+    font-size: 20px;
+}
+
+.header-container h2 {
     font-size: 22px;
     margin: 0;
     padding: 0;
@@ -22,6 +26,10 @@ header h2 {
 
 .checkout-section h2 {
     font-size: 22px;
+}
+
+.footer-container h2 {
+    font-size: 15px;
 }
 
 h3 {
@@ -88,18 +96,15 @@ p {
 header {
     display: flex;
     flex-direction: column;
-    background-image: url("images/coffee-top.png");
+    background-image: url("images/coffee-top-dark.png");
     /* background-color: #111827; */
     background-size: cover;
     background-position: center;
     color: whitesmoke;
+    justify-content: center;
 }
 
 .header-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* width: 500px; */
     width: 100%;
     padding: 55px 0 57px 45px;
     margin: 0 auto 0 auto;
@@ -223,7 +228,7 @@ main {
     color: whitesmoke;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: whitesmoke;
-    background-image: url("images/cappuccino.png");
+    background-image: url("images/coffee-top-dark.png");
     background-size: cover;
     background-position: center;
     position: fixed;
@@ -283,6 +288,20 @@ input {
     margin: 15px 0 0 0;
     text-align: center;
     padding: 0;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #111827;
+    color: whitesmoke;
+    justify-content: center;
+}
+
+.footer-container {
+    width: 100%;
+    padding: 40px 0 45px 45px;
+    margin: 0 auto 0 auto;
 }
 
 /* buttons*/
@@ -364,12 +383,20 @@ input {
 
 /* typography */
 
-header h1 {
+.header-container h1 {
     font-size: 60px;
 }
 
-header h2 {
-    font-size: 40px;
+.footer-container h1 {
+    font-size: 45px;
+}
+
+.header-container h2 {
+    font-size: 30px;
+}
+
+.footer-container h2 {
+    font-size: 25px;
 }
 
 .checkout-section h2 {
@@ -467,6 +494,11 @@ main {
 
 .rating-container {
     margin-top: 20px;
+}
+
+.footer-container {
+    width: 60%;
+    padding: 50px 0 55px 45px;
 }
 
 /* Buttons */

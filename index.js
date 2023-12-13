@@ -2,6 +2,8 @@ import menuArray from '/data.js'
 
 const paymentModal = document.getElementById("payment-modal")
 
+const inputName = document.getElementById("input-name")
+
 let orderArray = []
 
 document.addEventListener("click", function(e) {
@@ -22,20 +24,6 @@ document.addEventListener("click", function(e) {
 window.addEventListener("click", rootClick)
 
 // paymentModal.addEventListener("click", modalClick)
-
-// function handleAddButtonClick(itemId) {
-
-//     const targetItemObj = menuArray.filter( function(menuItem) {
-//         return menuItem.id === itemId
-//     })[0]
-
-//     orderArray.push(targetItemObj)
-
-//     document.getElementById("checkout-section").style.display = "flex"
-
-//     renderOrder()
-
-// }
 
 function handleAddButtonClick(itemId) {
     const [itemIdWithoutSize, size] = itemId.split("-")
@@ -162,7 +150,7 @@ function handlePayButtonClick() {
             document.getElementById("checkout-section").innerHTML = `
             <div class="order-complete-message-section"
                 id="order-complete-message-section">
-                <h8>Thank you! Your order is on its way!</h8>
+                <h8>Thank you, ${inputName.value}! Your order is on its way!</h8>
                 <h8>Please rate your experience</8>
                 <div class="rating-container" id="rating-container"></div>
             </div>`
