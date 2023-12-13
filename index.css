@@ -89,6 +89,7 @@ header {
     display: flex;
     flex-direction: column;
     background-image: url("images/coffee-top.png");
+    /* background-color: #111827; */
     background-size: cover;
     background-position: center;
     color: whitesmoke;
@@ -128,8 +129,7 @@ main {
 
 .item-image-container {
     display: flex;
-    flex-direction: column;
-    width: 80px;
+    width: 100px;
     align-items: center;
     justify-content: center;
     margin-right: 30px;
@@ -142,15 +142,21 @@ main {
 .prices-container {
     display: flex;
     gap: 30px;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    justify-content: flex-end;
+    /* padding-left: 40px; */
+    padding-right: 40px;
 }
 
 .portion-sizes {
     display: flex;
     gap: 15px;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    justify-content: flex-end;
+    /* padding-left: 30px; */
+    padding-right: 15px;
 }
 
 .add-btn-container {
@@ -213,9 +219,13 @@ main {
 .payment-modal {
     display: none; /*flex when displayed*/
     flex-direction: column;
-    color: #111827;
+    /* color: #111827; */
+    color: whitesmoke;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: whitesmoke;
+    background-image: url("images/cappuccino.png");
+    background-size: cover;
+    background-position: center;
     position: fixed;
     margin: auto;
     top: 0;
@@ -289,7 +299,7 @@ input {
 }
 
 .remove-button {
-    color: #BBB;
+    color: #FFF1F2;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     font-weight: 400;
@@ -297,6 +307,15 @@ input {
     margin: 0 0 0 15px;
     padding: 0;
     border: none;
+    cursor: pointer;
+}
+
+.size-button {
+    color: #603817;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
     cursor: pointer;
 }
 
@@ -336,8 +355,7 @@ input {
 /* images */
 
 .item-image {
-    /* width: 100%; */
-    width: 80px;
+    width: 100px;
     border-radius: 4px;
 }
 
@@ -399,7 +417,7 @@ main {
 }
 
 .item-image-container {
-    width: 150px;
+    width: 200px;
     margin-right: 50px;
 }
 
@@ -408,7 +426,7 @@ main {
     gap: 30px;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 320px;
+    padding-left: 352px;
 }
 
 .portion-sizes {
@@ -416,7 +434,7 @@ main {
     gap: 15px;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 320px;
+    padding-left: 315px;
 
 }
 
@@ -453,6 +471,11 @@ main {
     font-size: 18px;
 }
 
+.size-button {
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
 .purchase-button {
     font-size: 25px;
     margin-top: 70px;
@@ -461,7 +484,7 @@ main {
 /* Images */
 
 .item-image  {
-    width: 150px;
+    width: 200px;
 }
 
 }
