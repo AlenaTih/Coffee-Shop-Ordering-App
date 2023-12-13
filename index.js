@@ -23,19 +23,42 @@ window.addEventListener("click", rootClick)
 
 // paymentModal.addEventListener("click", modalClick)
 
+// function handleAddButtonClick(itemId) {
+
+//     const targetItemObj = menuArray.filter( function(menuItem) {
+//         return menuItem.id === itemId
+//     })[0]
+
+//     orderArray.push(targetItemObj)
+
+//     document.getElementById("checkout-section").style.display = "flex"
+
+//     renderOrder()
+
+// }
+
 function handleAddButtonClick(itemId) {
+    const [itemIdWithoutSize, size] = itemId.split("-")
+    const targetItemObj = menuArray.find((menuItem) => menuItem.id === itemIdWithoutSize)
+  
+    if (targetItemObj) {
+        // Find the index of the selected size in sizes array
+        const sizeIndex = targetItemObj.sizes.indexOf(size)
 
-    const targetItemObj = menuArray.filter( function(menuItem) {
-        return menuItem.id === itemId
-    })[0]
-
-    orderArray.push(targetItemObj)
-
-    document.getElementById("checkout-section").style.display = "flex"
-
-    renderOrder()
-
-}
+        // Create a copy of the item with the selected portion size and corresponding price
+        const selectedItem = {
+            ...targetItemObj,
+            size,
+            price: targetItemObj.prices[sizeIndex]
+        }
+  
+      orderArray.push(selectedItem)
+  
+      document.getElementById("checkout-section").style.display = "flex"
+  
+      renderOrder()
+    }
+  }
 
 function handleRemoveButtonClick(itemId) {
     
@@ -67,8 +90,8 @@ function renderOrder() {
 
         orderHtml +=`
         <div class="order-item">
-                <h3>${orderItem.name}</h3>
-                <button class="remove-button" data-remove="${orderItem.id}">remove</button>
+                <h3>${orderItem.name} - ${orderItem.size}</h3>
+                <button class="remove-button" data-remove="${orderItem.id} - ${orderItem.size}">remove</button>
             <div class="order-item-price">
                 <h4>$${orderItem.price}</h4>
             </div>
@@ -92,13 +115,10 @@ function renderOrder() {
                 <h4>$${(sumToPay * 0.15).toFixed(2)}</h4>
             </div>`
     } else {
-        document.getElementById("order-sum").innerHTML = `<h4>$${sumToPay}</h4>`
+        document.getElementById("order-sum").innerHTML = `<h4>$${sumToPay.toFixed(2)}</h4>`
     }
 
 }
-
-
-
 
 // Add here a condition for else if above
 
@@ -198,23 +218,36 @@ function getMenuHtml() {
     menuArray.forEach( function(item) {
 
        menuHtml +=`
-        <div class="menu-item"">
+        <div class="menu-item">
             <div class="item-image-container">
-            <img class="item-image" src="images/${item.image}">
+                <img class="item-image" src="images/${item.image}">
             </div>
             <div class="menu-details">
                 <h3>${item.name}</h3>
-                <p>${item.ingredients.join(", ")}</p>
-                <h4>$${item.price}</h4>
-            </div>
-            <div class="add-btn-container">
-                <i class="fa-light fa-plus add-button" data-add="${item.id}"></i>
+                <p>${item.ingredients}</p>
+                <div class="prices-container">
+                    <h4>$${item.prices[0]}</h4>
+                    <h4>$${item.prices[1]}</h4>
+                    <h4>$${item.prices[2]}</h4>
+                </div>
+                <div class="portion-sizes">
+                    ${item.sizes.map( size =>
+                        `<button
+                            class="size-button"
+                            data-add="${item.id}-${size}">
+                            ${size}
+                        </button>`).join("")}
+                </div>
             </div>
         </div>`
     }) 
 
     return menuHtml
 }
+
+/* <div class="add-btn-container">
+    <i class="fa-light fa-plus add-button" data-add="${item.id}"></i>
+</div> */
 
 function renderMenu() {
     document.getElementById("menu-container").innerHTML = getMenuHtml()
