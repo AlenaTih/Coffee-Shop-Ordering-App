@@ -1,4 +1,36 @@
-# co17a4bec9011e440e75d0212
+# Coffee Shop Ordering App
+
+## Overview
+
+This project is a web-based coffee shop application where users can browse the menu, select different portion sizes, add items to their order, and complete the purchase.
+
+Built with a mobile-first approach and accessibility in mind.
+
+## Features
+
+- **Menu Display:** browse through a variety of coffee items with detailed descriptions.
+- **Portion Sizes:** choose from small, medium, or big portions for your favorite coffee drinks.
+- **Order Management:** easily add or remove items from your order, view the total, and complete the purchase.
+- **Payment Modal:** securely enter card details for a seamless checkout experience.
+- **Friends Deal:** get a 15% discount for 2+ items in 1 order!
+- **User Feedback:** rate your experience after making your order.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Font Awesome CDN
+
+## Contributors
+
+- Alena Tikhomirova
+
+## Acknowledgments
+
+This is a solo project I built in [Scrimba's](https://scrimba.com/) Frontend Development course. Scrimba is awesome!
+
+
 
 Quick start:
 
@@ -8,14 +40,3 @@ $ npm start
 ````
 
 Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
-
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
-
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
-
-Happy Coding!

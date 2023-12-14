@@ -316,12 +316,25 @@ button {
     border: none;
 }
 
+.remove-button:hover,
+.remove-button:focus,
+.remove-button:active {
+    font-size: 15px;
+}
+
 .size-button {
     color: #603817;
     font-size: 15px;
     border: none;
     border-radius: 4px;
     padding: 5px 10px;
+}
+
+.size-button:hover,
+.size-button:focus,
+.size-button:active {
+    color: whitesmoke;
+    background-color: #16DB99;
 }
 
 .payment-modal-close-btn {
@@ -355,6 +368,15 @@ button {
     margin: 5px 0 0 0;
     border: none;
     border-radius: 4px;
+}
+
+.purchase-button:hover,
+.purchase-button:focus,
+.purchase-button:active,
+.pay-button:hover,
+.pay-button:focus,
+.pay-button:active {
+    background-color: #25B17E;
 }
 
 /* images */
@@ -483,6 +505,12 @@ main {
 
 .remove-button {
     font-size: 18px;
+}
+
+.remove-button:hover,
+.remove-button:focus,
+.remove-button:active {
+    font-size: 20px;
 }
 
 .size-button {
