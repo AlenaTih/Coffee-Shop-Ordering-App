@@ -77,6 +77,10 @@ p {
     font-size: 16px;
 }
 
+.menu-details p {
+    padding-right: 20px;
+}
+
 .star {
     color: #757575;
     cursor: pointer;
@@ -106,7 +110,7 @@ header {
 
 .header-container {
     width: 80%;
-    padding: 55px 0 57px 45px;
+    padding: 55px 0 57px 0;
     margin: 0 auto 0 auto;
 }
 
@@ -123,7 +127,7 @@ main {
     flex-direction: column;
     width: 100%;
     margin: 0 auto 0 auto;
-    padding: 60px 0 0 15px;
+    padding: 60px 20px 20px 15px;
 }
 
 .menu-item {
@@ -295,7 +299,7 @@ footer {
 
 .footer-container {
     width: 80%;
-    padding: 40px 0 45px 45px;
+    padding: 40px 0 45px 0;
     margin: 0 auto 0 auto;
 }
 
@@ -429,6 +433,10 @@ h8 {
 
 p {
     font-size: 25px;
+}
+
+.menu-details p {
+    padding-right: 0;
 }
 
 /* layout */
