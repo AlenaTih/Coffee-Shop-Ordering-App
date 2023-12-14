@@ -127,7 +127,7 @@ main {
     flex-direction: column;
     width: 100%;
     margin: 0 auto 0 auto;
-    padding: 60px 20px 20px 15px;
+    padding: 35px 20px 20px 20px;
 }
 
 .menu-item {
@@ -146,7 +146,7 @@ main {
 
 .menu-details {
     width: 100%;
-    padding-right: 15px;
+    padding-right: 20px;
 }
 
 .prices-container {
@@ -463,6 +463,11 @@ main {
 .item-image-container {
     width: 200px;
     margin-right: 50px;
+}
+
+.menu-details {
+    width: 100%;
+    padding-right: 0;
 }
 
 .prices-container {
