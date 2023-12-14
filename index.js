@@ -23,17 +23,17 @@ document.addEventListener("click", function(e) {
 
 window.addEventListener("click", rootClick)
 
-// paymentModal.addEventListener("click", modalClick)
-
 function handleAddButtonClick(itemId) {
     const [itemIdWithoutSize, size] = itemId.split("-")
-    const targetItemObj = menuArray.find((menuItem) => menuItem.id === itemIdWithoutSize)
+    const targetItemObj = menuArray.find((menuItem) =>
+        menuItem.id === itemIdWithoutSize)
   
     if (targetItemObj) {
         // Find the index of the selected size in sizes array
         const sizeIndex = targetItemObj.sizes.indexOf(size)
 
-        // Create a copy of the item with the selected portion size and corresponding price
+        // Create a copy of the item with the selected portion size
+        // and corresponding price
         const selectedItem = {
             ...targetItemObj,
             size,
@@ -108,8 +108,6 @@ function renderOrder() {
 
 }
 
-// Add here a condition for else if above
-
 function handlePurchaseButtonClick() {
     paymentModal.style.display = "flex"
 }
@@ -129,13 +127,6 @@ function rootClick(e) {
         closePaymentModal()
         }
 }
-
-// function modalClick(e) {
-//     e.preventDefault()
-//     e.stopPropagation()
-//     e.stopImmediatePropagation()
-//     return false
-// }
 
 function handlePayButtonClick() {
 
@@ -232,10 +223,6 @@ function getMenuHtml() {
 
     return menuHtml
 }
-
-/* <div class="add-btn-container">
-    <i class="fa-light fa-plus add-button" data-add="${item.id}"></i>
-</div> */
 
 function renderMenu() {
     document.getElementById("menu-container").innerHTML = getMenuHtml()
