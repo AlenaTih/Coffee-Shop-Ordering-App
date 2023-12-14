@@ -1,7 +1,7 @@
 const menuArray = [
     {
       name: "Cappuccino",
-      ingredients: ["A classic Italian favourite made with rich espresso, steamed milk, and a layer of foamy froth"],
+      ingredients: ["A classic Italian favorite made with rich espresso, steamed milk, and a layer of foamy froth"],
       sizes: ["Small", "Medium", "Big"],
       prices: [3, 4, 5],
       image: "cappuccino.png",
