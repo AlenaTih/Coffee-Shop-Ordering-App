@@ -31,6 +31,6 @@ const menuArray = [
       image: "espresso.png",
       id: "3"
     }
-  ];
+  ]
   
   export default menuArray
