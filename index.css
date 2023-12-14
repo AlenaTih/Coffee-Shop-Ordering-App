@@ -19,6 +19,7 @@ h1 {
 
 .header-container h2 {
     font-size: 22px;
+    font-weight: 600;
     margin: 0;
     padding: 0;
 }
@@ -29,6 +30,7 @@ h1 {
 
 .footer-container h2 {
     font-size: 15px;
+    font-weight: 600;
 }
 
 h3 {
@@ -145,7 +147,7 @@ main {
 
 .prices-container {
     display: flex;
-    gap: 30px;
+    gap: 35px;
     align-items: center;
     justify-content: flex-end;
     padding-right: 40px;
@@ -235,7 +237,7 @@ main {
     justify-content: center;
     height: 480px;
     max-width: 80%;
-    padding: 30px 45px 50px 45px;
+    padding: 30px 45px 60px 45px;
     border-radius: 4px;
     box-sizing: border-box;
     box-shadow: 6px 6px 255px rgba(0, 0, 0, 0.50);
@@ -253,7 +255,9 @@ form {
 }
 
 input {
+    color: #111827;
     font-size: 20px;
+    background-color: #FFF1F2;
     width: 100%;
     padding: 15px;
     margin: 0;
@@ -297,16 +301,6 @@ footer {
 
 /* buttons*/
 
-/* .add-button {
-    color: whitesmoke;
-    font-size: 40px;
-    font-style: normal;
-    border-radius: 50%;
-    border: 1px solid #DEDEDE;
-    padding: 5px 20px;
-    cursor: pointer;
-} */
-
 button {
     cursor: pointer;
 }
@@ -331,7 +325,10 @@ button {
 }
 
 .payment-modal-close-btn {
+    background-color: #FFF1F2;
     margin: 0 0 30px auto;
+    border: none;
+    border-radius: 4px;
 }
 
 .purchase-button {
@@ -439,17 +436,12 @@ main {
 }
 
 .prices-container {
-    display: flex;
-    gap: 30px;
-    align-items: center;
+    gap: 45px;
     justify-content: flex-end;
     padding-right: 40px;
 }
 
 .portion-sizes {
-    display: flex;
-    gap: 15px;
-    align-items: center;
     justify-content: flex-end;
     padding-right: 15px;
 
@@ -470,7 +462,7 @@ main {
 
 .payment-modal {
     max-width: 520px;
-    padding: 80px 45px 100px 45px;
+    padding: 90px 45px 120px 45px;
 }
 
 .order-complete-message-section {
