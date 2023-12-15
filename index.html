@@ -22,80 +22,81 @@
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     </head>
     <body>
-        <header>
-            <div class="header-container">
-                <h1>Sip & Savor Roastery</h1>
-                <h2>Indulge in the perfect blend of flavor and ambiance.</h2>
-            </div>
-        </header>
-        
-        <main>
-            <div class="menu-container" id="menu-container">
-                <!-- menu items are here -->
-                
-            </div>
-
-            <div class="deal-section" id="deal-section">
-                <h3>Friends deal — get a 15% discount for 2+ items in 1 order!</h3>
-            </div>
-
-                <div class="checkout-section" id="checkout-section">
-                    <h3>Your order</h3>
-                    <div class="order-items" id="order-items">
-                        <!-- order items are here -->
-                    </div>
-                    <div class="order-total">
-                        <h2>Total price:</h2>
-                        <div class="order-sum" id="order-sum">
-                            <!-- sum to pay is here -->
-                        </div>
-                    </div>
-                    <div class="order-discount-container" id="order-discount-container">
-                        <!-- discount is here -->
-                    </div>
-                    <button class="purchase-button" id="purchase-button">
-                        Complete order
-                    </button>
+        <div class="container">
+            <header>
+                <div class="header-container">
+                    <h1>Sip & Savor Roastery</h1>
+                    <h2>Indulge in the perfect blend of flavor and ambiance.</h2>
+                </div>
+            </header>
+            
+            <main>
+                <div class="menu-container" id="menu-container">
+                    <!-- menu items are here -->
+                    
                 </div>
 
-            <div class="payment-modal" id="payment-modal">
-                <button class="payment-modal-close-btn" id="payment-modal-close-btn">X</button>
-                    <h6>Enter card details</h6>
-                    <form>
-                        <input
-                            type="text"
-                            name="name"
-                            id="input-name"
-                            placeholder="Enter your name"
-                            aria-label="Enter your name"
-                            required>
-                        <input
-                            type="number"
-                            name="number"
-                            id="input-number"
-                            placeholder="Enter card number"
-                            aria-label="Enter card number"
-                            required>
-                        <input 
-                            type="number"
-                            name="cvv"
-                            id="input-cvv"
-                            placeholder="Enter CVV"
-                            aria-label="Enter CVV"
-                            required>
-                        <button type="submit" class="pay-button" id="pay-button">Pay</button>
-                    </form>
-            </div>
+                <div class="deal-section" id="deal-section">
+                    <h3>Friends deal — get a 15% discount for 2+ items in 1 order!</h3>
+                </div>
 
-        </main>
+                    <div class="checkout-section" id="checkout-section">
+                        <h3>Your order</h3>
+                        <div class="order-items" id="order-items">
+                            <!-- order items are here -->
+                        </div>
+                        <div class="order-total">
+                            <h2>Total price:</h2>
+                            <div class="order-sum" id="order-sum">
+                                <!-- sum to pay is here -->
+                            </div>
+                        </div>
+                        <div class="order-discount-container" id="order-discount-container">
+                            <!-- discount is here -->
+                        </div>
+                        <button class="purchase-button" id="purchase-button">
+                            Complete order
+                        </button>
+                    </div>
 
-        <footer>
-            <div class="footer-container">
-                <h1>Sip & Savor Roastery</h1>
-                <h2>Barista: As usual for you?</h2>
-            </div>
-        </footer>
-        
+                <div class="payment-modal" id="payment-modal">
+                    <button class="payment-modal-close-btn" id="payment-modal-close-btn">X</button>
+                        <h6>Enter card details</h6>
+                        <form>
+                            <input
+                                type="text"
+                                name="name"
+                                id="input-name"
+                                placeholder="Enter your name"
+                                aria-label="Enter your name"
+                                required>
+                            <input
+                                type="number"
+                                name="number"
+                                id="input-number"
+                                placeholder="Enter card number"
+                                aria-label="Enter card number"
+                                required>
+                            <input 
+                                type="number"
+                                name="cvv"
+                                id="input-cvv"
+                                placeholder="Enter CVV"
+                                aria-label="Enter CVV"
+                                required>
+                            <button type="submit" class="pay-button" id="pay-button">Pay</button>
+                        </form>
+                </div>
+
+            </main>
+
+            <footer>
+                <div class="footer-container">
+                    <h1>Sip & Savor Roastery</h1>
+                    <h2>Barista: As usual for you?</h2>
+                </div>
+            </footer>
+        </div>
 	    <script src="index.js" type="module"></script>
     </body>
 </html>
