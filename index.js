@@ -58,90 +58,186 @@ document.addEventListener("click", function(e) {
 
 window.addEventListener("click", rootClick)
 
+// function handleAddButtonClick(itemId) {
+//     const [itemIdWithoutSize, size] = itemId.split("-")
+//     const targetItemObj = menuArray.find((menuItem) =>
+//         menuItem.id === itemIdWithoutSize)
+  
+//     if (targetItemObj) {
+//         // Find the index of the selected size in sizes array
+//         const sizeIndex = targetItemObj.sizes.indexOf(size)
+
+//         // Create a copy of the item with the selected portion size
+//         // and corresponding price
+//         const selectedItem = {
+//             ...targetItemObj,
+//             size,
+//             price: targetItemObj.prices[sizeIndex]
+//         }
+  
+//       orderArray.push(selectedItem)
+  
+//       document.getElementById("checkout-section").style.display = "flex"
+  
+//       renderOrder()
+//     }
+//   }
+
+// function handleRemoveButtonClick(itemId) {
+    
+//     const targetItemObj = menuArray.filter( function(menuItem) {
+//         return menuItem.id === itemId
+//     })[0]
+
+//     orderArray.pop(targetItemObj)
+
+//     if (orderArray.length > 1) {
+//         renderOrder()
+//     } else if (orderArray.length === 1) {
+//         renderOrder()
+//         document.getElementById("order-discount-container").style.display = "none" 
+//     }
+//     else {
+//         document.getElementById("checkout-section").style.display = "none"
+//     }
+
+// }
+
 function handleAddButtonClick(itemId) {
     const [itemIdWithoutSize, size] = itemId.split("-")
-    const targetItemObj = menuArray.find((menuItem) =>
-        menuItem.id === itemIdWithoutSize)
-  
+    const targetItemObj = menuArray.find( (menuItem) => menuItem.id === itemIdWithoutSize)
+
     if (targetItemObj) {
-        // Find the index of the selected size in sizes array
-        const sizeIndex = targetItemObj.sizes.indexOf(size)
+        const existingOrderItem = orderArray.find(
+            (orderItem) => orderItem.id === itemIdWithoutSize && orderItem.size === size
+        )
 
-        // Create a copy of the item with the selected portion size
-        // and corresponding price
-        const selectedItem = {
-            ...targetItemObj,
-            size,
-            price: targetItemObj.prices[sizeIndex]
+        if (existingOrderItem) {
+            // If the same item and size already exist, increase the quantity
+            existingOrderItem.quantity += 1
+        } else {
+            // Otherwise, create a new order item with quantity 1
+            const selectedItem = {
+                ...targetItemObj,
+                size,
+                price: targetItemObj.prices[targetItemObj.sizes.indexOf(size)],
+                quantity: 1,
+            }
+
+            orderArray.push(selectedItem)
         }
-  
-      orderArray.push(selectedItem)
-  
-      document.getElementById("checkout-section").style.display = "flex"
-  
-      renderOrder()
-    }
-  }
 
-function handleRemoveButtonClick(itemId) {
-    
-    const targetItemObj = menuArray.filter( function(menuItem) {
-        return menuItem.id === itemId
-    })[0]
-
-    orderArray.pop(targetItemObj)
-
-    if (orderArray.length > 1) {
+        document.getElementById("checkout-section").style.display = "flex"
         renderOrder()
-    } else if (orderArray.length === 1) {
-        renderOrder()
-        document.getElementById("order-discount-container").style.display = "none" 
     }
-    else {
-        document.getElementById("checkout-section").style.display = "none"
-    }
-
 }
 
+function handleRemoveButtonClick(itemId) {
+    const [itemIdWithoutSize, size] = itemId.split("-")
+    const targetItemObj = menuArray.find( (menuItem) => menuItem.id === itemIdWithoutSize)
+
+    const existingOrderItem = orderArray.find(
+        (orderItem) => orderItem.id === itemIdWithoutSize && orderItem.size === size
+    )
+
+    if (existingOrderItem) {
+        // If quantity is greater than 1, decrease the quantity
+        if (existingOrderItem.quantity > 1) {
+            existingOrderItem.quantity -= 1
+        } else {
+            // If quantity is 1 or less, remove the item from the order array
+            orderArray = orderArray.filter(
+                (orderItem) => !(orderItem.id === itemIdWithoutSize && orderItem.size === size)
+            )
+        }
+
+        if (orderArray.length >= 1) {
+            renderOrder()
+        } else {
+            document.getElementById("checkout-section").style.display = "none"
+        }
+    }
+}
+
+
+// function renderOrder() {
+//     let orderHtml = ""
+//     let totalPrice = 0
+
+//     orderArray.forEach( (orderItem) => {
+//         orderHtml += `
+//             <div class="order-item">
+//                 <h3>${orderItem.name} - ${orderItem.size} * ${orderItem.quantity}</h3>
+//                 <button
+//                     class="remove-button"
+//                     data-remove="${orderItem.id}-${orderItem.size}">
+//                     remove
+//                 </button>
+//                 <div class="order-item-price">
+//                     <h4>$${(orderItem.price * orderItem.quantity).toFixed(2)}</h4>
+//                 </div>
+//             </div>`
+
+//         totalPrice += orderItem.price * orderItem.quantity
+//     })
+
+//     document.getElementById("order-items").innerHTML = orderHtml
+
+//     if (orderArray.length > 1) {
+//         document.getElementById("order-sum").innerHTML = `<h4>$${(totalPrice * 0.85).toFixed(2)}</h4>`
+//         document.getElementById("order-discount-container").style.display = "flex"
+//         document.getElementById("order-discount-container").innerHTML = `
+//             <h4>Your discount:</h4>
+//             <div class="order-discount" id="order-discount">
+//                 <h4>$${(totalPrice * 0.15).toFixed(2)}</h4>
+//             </div>`
+//     } else {
+//         document.getElementById("order-sum").innerHTML = `<h4>$${totalPrice.toFixed(2)}</h4>`
+//     }
+// }
+
 function renderOrder() {
-    
     let orderHtml = ""
+    let totalPrice = 0
+    let totalQuantity = 0
 
-    let totalPrice = []
+    orderArray.forEach( (orderItem) => {
+        orderHtml += `
+            <div class="order-item">
+                <h3>${orderItem.name} - ${orderItem.size} *${orderItem.quantity}</h3>
+                <button
+                    class="remove-button"
+                    data-remove="${orderItem.id}-${orderItem.size}">
+                    remove
+                </button>
+                <div class="order-item-price">
+                    <h4>$${(orderItem.price * orderItem.quantity).toFixed(2)}</h4>
+                </div>
+            </div>`
 
-    orderArray.forEach( function(orderItem) {
-
-        orderHtml +=`
-        <div class="order-item">
-                <h3>${orderItem.name} - ${orderItem.size}</h3>
-                <button class="remove-button" data-remove="${orderItem.id} - ${orderItem.size}">remove</button>
-            <div class="order-item-price">
-                <h4>$${orderItem.price}</h4>
-            </div>
-        </div>`
-
-        totalPrice.push(orderItem.price)
+        totalPrice += orderItem.price * orderItem.quantity
+        totalQuantity += orderItem.quantity
     })
 
     document.getElementById("order-items").innerHTML = orderHtml
 
-    const sumToPay = totalPrice.reduce( function(total, currentPrice) {
-        return total + currentPrice
-    })
-
-    if (orderArray.length > 1) {
-        document.getElementById("order-sum").innerHTML = `<h4>$${(sumToPay * 0.85).toFixed(2)}</h4>`
+    if (totalQuantity > 1) {
+        // Apply a 15% discount if there are more than 1 item
+        const discountedPrice = totalPrice * 0.85
+        document.getElementById("order-sum").innerHTML = `<h4>$${discountedPrice.toFixed(2)}</h4>`;
         document.getElementById("order-discount-container").style.display = "flex"
         document.getElementById("order-discount-container").innerHTML = `
             <h4>Your discount:</h4>
             <div class="order-discount" id="order-discount">
-                <h4>$${(sumToPay * 0.15).toFixed(2)}</h4>
+                <h4>$${(totalPrice - discountedPrice).toFixed(2)}</h4>
             </div>`
     } else {
-        document.getElementById("order-sum").innerHTML = `<h4>$${sumToPay.toFixed(2)}</h4>`
+        document.getElementById("order-sum").innerHTML = `<h4>$${totalPrice.toFixed(2)}</h4>`
+        document.getElementById("order-discount-container").style.display = "none"
     }
-
 }
+
+
 
 function handlePurchaseButtonClick() {
     paymentModal.style.display = "flex"
