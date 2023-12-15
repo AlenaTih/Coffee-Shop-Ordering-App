@@ -53,6 +53,8 @@ document.addEventListener("click", function(e) {
         handlePayButtonClick()
     } else if (e.target.id === "payment-modal-close-btn") {
         closePaymentModal()
+    } else if (e.target.dataset.more) {
+        handleAddButtonClick(e.target.dataset.more)
     }
 })
 
@@ -124,9 +126,14 @@ function renderOrder() {
             <div class="order-item">
                 <h3>${orderItem.name} - ${orderItem.size} *${orderItem.quantity}</h3>
                 <button
+                    class="more-button"
+                    data-more="${orderItem.id}-${orderItem.size}">
+                    +
+                </button>
+                <button
                     class="remove-button"
                     data-remove="${orderItem.id}-${orderItem.size}">
-                    remove
+                    -
                 </button>
                 <div class="order-item-price">
                     <h4>$${(orderItem.price * orderItem.quantity).toFixed(2)}</h4>

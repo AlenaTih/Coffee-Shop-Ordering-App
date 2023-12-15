@@ -356,7 +356,7 @@ button {
 .remove-button {
     color: #FFF1F2;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 400;
     background: none;
     margin: 0 0 0 15px;
@@ -367,7 +367,24 @@ button {
 .remove-button:hover,
 .remove-button:focus,
 .remove-button:active {
+    font-size: 18px;
+}
+
+.more-button {
+    color: #FFF1F2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
+    font-weight: 400;
+    background: none;
+    margin: 0 0 0 15px;
+    padding: 0;
+    border: none;
+}
+
+.more-button:hover,
+.more-button:focus,
+.more-button:active {
+    font-size: 18px;
 }
 
 .size-button {
@@ -587,6 +604,16 @@ main {
 .remove-button:hover,
 .remove-button:focus,
 .remove-button:active {
+    font-size: 20px;
+}
+
+.more-button {
+    font-size: 18px;
+}
+
+.more-button:hover,
+.more-button:focus,
+.more-button:active {
     font-size: 20px;
 }
 
