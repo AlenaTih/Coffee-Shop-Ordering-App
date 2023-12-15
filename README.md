@@ -9,7 +9,7 @@ Built with a mobile-first approach and accessibility in mind.
 ## Features
 
 - **Menu Display:** browse through a variety of coffee items with detailed descriptions.
-- **Portion Sizes:** choose from small, medium, or big portions for your favorite coffee drinks.
+- **Portion Sizes:** choose from small, medium, or large portions for your favorite coffee drinks.
 - **Order Management:** easily add or remove items from your order, view the total, and complete the purchase.
 - **Payment Modal:** securely enter card details for a seamless checkout experience.
 - **Friends Deal:** get a 15% discount for 2+ items in 1 order!
