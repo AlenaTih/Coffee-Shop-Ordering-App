@@ -50,6 +50,10 @@ h3 {
     padding: 0;
 }
 
+.order-item h3 {
+    font-size: 20px;
+}
+
 .deal-section h3 {
     text-align: center;
     font-size: 18px;
@@ -488,6 +492,10 @@ a:hover, a:active, a:visited {
 
 h3 {
     font-size: 45px;
+}
+
+.order-item h3 {
+    font-size: 32px;
 }
 
 .deal-section h3 {
