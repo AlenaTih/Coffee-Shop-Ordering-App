@@ -63,6 +63,10 @@ h4 {
     font-size: 20px;
 }
 
+.prices-container h4 {
+    margin-bottom: 15px;
+}
+
 .bottom h4 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FCF3F6;
@@ -191,7 +195,7 @@ main {
     gap: 15px;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 15px;
+    padding: 0 15px 10px 0;
 }
 
 .add-btn-container {
@@ -506,6 +510,10 @@ h4 {
     font-size: 32px;
 }
 
+.prices-container h4 {
+    margin-bottom: 25px;
+}
+
 .bottom h4 {
     font-size: 15px;
 }
@@ -541,6 +549,7 @@ main {
 }
 
 .menu-item {
+    padding-top: 20px;
     padding-bottom: 45px;
 }
 
@@ -562,8 +571,7 @@ main {
 
 .portion-sizes {
     justify-content: flex-end;
-    padding-right: 15px;
-
+    padding: 0 15px 15px 0;
 }
 
 .checkout-section {
