@@ -1,6 +1,6 @@
 {
-    "name": "Coffeeshop Ordering App",
-    "short_name": "Coffeeshop Ordering App",
+    "name": "Coffee Shop Ordering app",
+    "short_name": "Coffee Shop Ordering app",
     "icons":
         [
             {"src": "android-chrome-192x192.png", "sizes": "192x192", "type": "image/x-icon"},
