@@ -26,6 +26,13 @@ Built with a mobile-first approach and accessibility in mind.
 
 - Alena Tikhomirova
 
+## Contribution
+
+If you have ideas to enhance this project or encounter any issues, feel free to contribute by opening an issue or submitting a pull request.
+
+## Contact
+For inquiries or feedback, please contact me at alyonatihomirova9@gmail.com.
+
 ## Acknowledgments
 
 This is a solo project I built in [Scrimba's](https://scrimba.com/) Frontend Development course. Scrimba is awesome!
