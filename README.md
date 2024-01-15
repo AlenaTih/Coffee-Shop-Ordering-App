@@ -31,12 +31,3 @@ Built with a mobile-first approach and accessibility in mind.
 This is a solo project I built in [Scrimba's](https://scrimba.com/) Frontend Development course. Scrimba is awesome!
 
 
-
-Quick start:
-
-```
-$ npm install
-$ npm start
-````
-
-Head over to https://vitejs.dev/ to learn more about using vite
